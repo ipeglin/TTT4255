@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigating to correct repo directory on the RP
-cd "/home/pi/Documents/Git/TTT4255---Elsys-GK-Innovasjonsprosjekt---Raspberry-Pi/"
+cd "/home/pi/Documents/Git/TTT4255/"
 
 # Pulling the newest version from the remote GitHub repo
 git pull origin master
