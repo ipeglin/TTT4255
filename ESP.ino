@@ -1,14 +1,11 @@
 #include "PubSubClient.h" // Connect and publish to the MQTT broker
 #include "WiFi.h" // Enables ESP32 to connect to the local network
 
-// Class making it easier to register button clicks
 class Button {
-  // Private properties
   private:
     bool _state;
     uint8_t _pin;
 
-  // Public properties and methods
   public:
     Button(uint8_t pin) : _pin(pin) {}
 
@@ -17,7 +14,6 @@ class Button {
       _state = digitalRead(_pin);
     }
 
-    // Method checking if the button is pressec
     bool isPressed() {
       bool v = digitalRead(_pin);
       if (v != _state) {
@@ -39,11 +35,12 @@ class Button {
 
 // Pins
 const int INTLED = 2;
-Button CAM1_BTN(25); // Camera 1 Pin
-Button CAM2_BTN(26); // Camera 2 Pin
+Button CAM1_BTN(25);
+Button CAM2_BTN(26);
 
 // Values
-char* active_camera = "1"; // The active camera
+char* active_camera = "1";
+int failed_attempts = 0;
 
 // WiFi
 const char* ssid = "Kalifatet"; // Network SSID
@@ -87,7 +84,6 @@ void connect_MQTT() {
   }
 }
 
-// Function that flashed integrated light 3 times on startup
 void startupConfirmation() {
   for (int i = 0; i < 3; i++) {
     digitalWrite(INTLED, HIGH);
@@ -97,23 +93,20 @@ void startupConfirmation() {
   }
 }
 
-// Function for publishing data to the broker
 void publishData(const char* topic, char* camera) {
-  int attempts = 0; // Number of failed attempts
-
   connect_MQTT();
   Serial.setTimeout(2000);
 
   if (client.publish(topic, String(camera).c_str())) {
     Serial.println("Data sent!");
+    failed_attempts = 0;
   } else {
-    attempts++;
+    failed_attempts++;
     Serial.println("Data failed to send. Reconnection to broker and trying again");
     client.connect(clientID, mqtt_username, mqtt_password);
     delay(10);
     client.publish(topic, String(camera).c_str());
-    // If the connection has failed less than two times. Recurse
-    if (attempts < 2) {
+    if (failed_attempts < 2) {
       publishData(topic, camera);
     }
   }
@@ -131,17 +124,13 @@ void setup() {
 void loop() {
   if (CAM1_BTN.isPressed() && active_camera != "1") {
     active_camera = "1";
-
     Serial.print("Active Camera is now: ");
     Serial.println(active_camera);
-
     publishData(camera_topic, active_camera);
   } else if (CAM2_BTN.isPressed() && active_camera != "2") {
     active_camera = "2";
-
     Serial.print("Active Camera is now: ");
     Serial.println(active_camera);
-    
     publishData(camera_topic, active_camera);
   }
 }
