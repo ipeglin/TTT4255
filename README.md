@@ -11,7 +11,9 @@ The purpose of this repository is to host the source code for the different micr
 
 ### Hardware
 > **Peter H.D Pham** - [PeterhdPham](https://github.com/PeterhdPham) -     *Chassis*
+
 > **Truls Rakvåg** - [tmrzordo](https://github.com/tmrzordo) -     *Chassis & Modelling*
+
 > **Bjørn Magnus Sætrom** - *Chassis* - [Username_here](#)
 
 ## Sources
