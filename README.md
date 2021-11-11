@@ -3,7 +3,12 @@ The purpose of this repository is to host the source code for the different micr
 
 ## Authors
 
-* **Ian Philip Eglin** - *Language_Here* - [ipeglin](https://github.com/ipeglin)
-* **FullNameHere** - *Language_Here* - [Username_Here](#)
-* **FullNameHere** - *Language_Here* - [Username_Here](#)
-* **FullNameHere** - *Language_Here* - [Username_Here](#)
+* **Ian Philip Eglin** - *Python / C++ / Bash | Software* - [ipeglin](https://github.com/ipeglin)
+* **Peter H.D Pham** - *Bash / Chassis | Hardware & Software* - [PeterhdPham](https://github.com/PeterhdPham)
+* **Harald Andersen** - *Electronics / Modelling| Hardware* - [Harald-dev](https://github.com/Harald-dev)
+* **Truls Rakvåg** - *Chassis / Modelling | Hardware* - [tmrzordo](https://github.com/tmrzordo)
+* **Bjørn Magnus Sætrom** - *Chassis | Hardware* - [Username_here](#)
+
+## Sources
+
+* [Paho-mqtt | Mosquitto Client](https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#connect-reconnect-disconnect)
