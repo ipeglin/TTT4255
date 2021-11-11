@@ -3,13 +3,13 @@ The purpose of this repository is to host the source code for the different micr
 
 ## Authors
 
-> Software
+### Software
 > **Ian Philip Eglin** - [ipeglin](https://github.com/ipeglin) -   *Software | Python / C++ / Bash*
 
-> Electronics
+### Electronics
 > **Harald Andersen** - [Harald-dev](https://github.com/Harald-dev) -  *Electronics & Modelling*
 
-> Hardware
+### Hardware
 > **Peter H.D Pham** - [PeterhdPham](https://github.com/PeterhdPham) -     *Chassis*
 > **Truls Rakvåg** - [tmrzordo](https://github.com/tmrzordo) -     *Chassis & Modelling*
 > **Bjørn Magnus Sætrom** - *Chassis* - [Username_here](#)
